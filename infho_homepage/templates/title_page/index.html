@@ -1,132 +1,55 @@
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>InfHo - Initiative für Hochbegabung e.V.</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    body {
-      font-family: "Open Sans",sans-serif;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container-fluid p-5 bg-primary text-white text-center" style="background:#ffffff url('{% static 'schmarje.png' %}') no-repeat center center;   background-size: cover;">
-    <div class="col-sm-4 bg-light ms-auto me-auto rounded p-3">
-      <div class=" ms-auto me-auto ">
-        <img class="img-fluid" src="{% static 'InfHo-Logo-thick-big-transparent.png' %}">
-      </div>
-      <div class="ms-auto me-auto text-dark pt-3">
-        Dies ist die Homepage der Initiative für Hochbegabung e.V.
-      </div>
-    </div>
-  </div>
-
-  <nav class="navbar navbar-expand-sm" style="background-color: #E1E1E1;">
-    <div class="container-fluid">
-      <a class="navbar-brand d-block d-sm-none" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" href="#">InHo e.V.</a>
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-              aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul class="navbar-nav me-auto mb-lg-0 ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active text-uppercase" aria-current="page" href="#">Start</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-uppercase" href="#" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">Kurse</a>
-          
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Kursangebot</a></li>
-              <li><a class="dropdown-item" href="#">Ferienkurse</a></li>
-              <li><a class="dropdown-item" href="#">Kalender</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase">Mitglied werden</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase">Elternberatung</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Über Uns</a>
-          
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Kooperationspartner</a></li>
-              <li><a class="dropdown-item" href="#">Satzung</a></li>
-              <li><a class="dropdown-item" href="#">Finanzbeschluss</a></li>
-              <li><a class="dropdown-item" href="#">Impressium</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!--<form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Hier tippen..." aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Suchen</button>
-        </form>-->
-      </div>
-    </div>
-  </nav>
-
+{% include 'title_page/header.html' %}
 
 <!-- Carousel -->
+  <div class="col-sm-8 ms-auto me-auto">
+    <div id="demo" class="carousel slide p-5 ms-auto me-auto" data-bs-ride="carousel">
 
-<div id="demo" class="carousel slide p-2" data-bs-ride="carousel">
-
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'carousel_1.jpg' %}" class="d-block w-100">
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'carousel_2.png' %}" class="d-block w-100">
-    </div>
-  </div>
-
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
- 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-sm-4">
-        <h3>Column 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris...</p>
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
       </div>
-      <div class="col-sm-4">
-        <h3>Column 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'carousel_1.jpg' %}" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'carousel_2.png' %}" class="d-block w-100">
+        </div>
       </div>
-      <div class="col-sm-4">
-        <h3>Column 3</h3>        
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+    <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <h2 class="text-uppercase fw-bolder">Aktuelles</h2>
+    <div class="container mb-5">
+      <div class="row">
+        {% for info in info_posts %}
+        <div class="col-sm-4 p-3">
+          <h3>{{info.title}}</h3>
+          {% if info.title_image_path != "" %}
+            <img alt="Beschreibendes Bild fuer eine aktuelle Information" class="img-fluid" src="{{info.title_image_path}}">
+          {% endif %}
+          <p>{{info.content_text}}</p>
+        </div>
+        {% endfor %}
+
       </div>
     </div>
+    <p class="fw-bolder mt-5 mb-5">Habt ihr Lust mitzumachen? Dann meldet euch gerne bei: <a href="mailto:info@infho.eu">info@infho.eu</a> oder werdet Mitglied.</p>
+    <blockquote class="blockquote text-center mb-5 mt-5">
+      <p class="">»Phantasie ist alles. Es ist die Vorschau auf die kommenden Ereignisse des Lebens.«</p>
+      <footer class="blockquote-footer">Albert Einstein</footer>
+    </blockquote>
   </div>
-
-</body>
-</html>
+{% include 'title_page/footer.html' %}

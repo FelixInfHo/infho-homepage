@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'title_page/header.html' %}
+<div class="col-sm-8 ms-auto me-auto">
+  <h2 class="text-uppercase fw-bolder">unser Blog</h2>
+  <div class="container mb-5">
+    <div class="row">
+      {% for blog in blog_posts %}
+      <div class="col-sm-4 p-3">
+        <h3>{{blog.title}}</h3>
+        {% if blog.title_image_path != "" %}
+          <img alt="Beschreibendes Bild fuer eine aktuelle Information" class="img-fluid" src="{{blog.title_image_path}}">
+        {% endif %}
+        <p>{{blog.content_text}}</p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+{% include 'title_page/footer.html' %}
+
