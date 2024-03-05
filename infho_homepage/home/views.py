@@ -15,7 +15,12 @@ def blog_overview(request):
         )
 
 def blog_entry(request, blog_id):
+    posts = get_object_or_404(BlogPost, id=blog_id)
+    if type(posts) is BlogPost:
+        images = posts.image_path_array.split(",")
+    else:
+        images = []
     return render(
-            request, "blog/blog_view.html", {"blog_post": get_object_or_404(BlogPost, id=blog_id)}
+            request, "blog/blog_view.html", {"blog_post": posts, "images": images}
         )
 
