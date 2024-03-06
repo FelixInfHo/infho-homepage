@@ -20,7 +20,7 @@ class PostingStore(models.Model):
     return f"»{self.title}« ~ {self.author.last_name}, {self.author.first_name} ({self.author.username}) – {self.content_text[:26]}..."
   
 class BlogPost(PostingStore):
-  image_path_array = models.CharField(max_length=4096, default="")
+  image_path_array = models.CharField(max_length=4096, default="", null=True)
 
   class Meta:
     verbose_name = "Blog Posting"

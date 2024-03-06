@@ -21,6 +21,6 @@ def blog_entry(request, blog_id):
     else:
         images = []
     return render(
-            request, "blog/blog_view.html", {"blog_post": posts, "images": images}
+            request, "blog/blog_view.html", {"blog_post": posts, "images": images, "image_range": range(1,len(images)+1)}
         )
 
