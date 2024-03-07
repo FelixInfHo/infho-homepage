@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib import admin
-
+from django.contrib.auth import get_user_model
 # Create your models here.
      
 
@@ -31,3 +31,11 @@ class InfoPost(PostingStore):
   class Meta:
     verbose_name = "Informationspost"
     #permissions = (("manage_information_posts", "erlaubt die Verwaltung von Informationen auf der Startseite"),)
+
+class Kurs(models.Model):
+  referenten       = models.ManyToManyField(get_user_model())
+  title            = models.CharField("Titel", max_length=128, default="")
+  description      = models.TextField("der Beitrag", max_length=16384)
+  # ggf als eigenes Model
+  Ort            = models.CharField("Ort", max_length=128, default="")
+

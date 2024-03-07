@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import BlogPost, InfoPost
+from .models import BlogPost, InfoPost, Kurs
 
 @admin.register(InfoPost)
 class InfoPostAdmin(admin.ModelAdmin):
@@ -50,3 +50,8 @@ class BlogPostAdmin(admin.ModelAdmin):
     instance.save()
     form.save_m2m()
     return instance
+
+@admin.register(Kurs)
+class KursAdmin(admin.ModelAdmin):
+    pass
+    
