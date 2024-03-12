@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ course.title }}{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "courses/course-details.css" %}">
+{% endblock  %}
+
+{% block content %}
+<section id="summary">
+    <h2>{{ course.title }}</h2>
+
+    <div>
+        {% for tag in course_tags %}
+            <span class="tag">#{{ tag.caption }}</span>
+        {% endfor %}
+    </div>
+
+    <article>
+        <img src="{{ course.image.url }}" alt="{{ course.title }}" style="max-width: 300px;">
+
+        <address>By <a href="mailto:{{ course.instructor.email_address }}">{{ course.instructor }}</a></address>
+        <div>
+            Last updated on <time>{{ course.date }}</time>  
+        </div>
+    </article>
+</section>
+
+<main>
+    <p>{{ course.content|linebreaks }}</p>course
+</main>
+{% endblock %}
