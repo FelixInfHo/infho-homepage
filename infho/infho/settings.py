@@ -80,10 +80,19 @@ WSGI_APPLICATION = 'infho.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+      'default': {
+        'ENGINE': environ.get('ENGINE'),
+        'NAME': environ.get('NAME'),
+        'USER': environ.get('USER'),
+        'PASSWORD': environ.get('PASSWORD'),
+        'HOST': environ.get('HOST'),
+        'PORT': environ.get('PORT'),
+        'OPTIONS': {'sslmode': 'require'},
+  }
 }
 
 
