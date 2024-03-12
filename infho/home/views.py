@@ -19,8 +19,12 @@ class StartingPageView(ListView):
 
     # adjusting querying logic
     def get_queryset(self):
-        queryset = super().get_queryset()
-        data = queryset[:3]
+        base_query = super().get_queryset()
+        
+        # use only tags with News for Homepage &
+        # + only  last 3 tags are used
+        data = base_query.filter(tags__caption="news").distinct()[:3] 
+        #data = base_query[:3]
         return data
 
 
