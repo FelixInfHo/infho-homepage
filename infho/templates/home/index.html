@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+
+
+    <section id="welcome">
+        <header>
+            <img src="{% static "home/images/schmarje.png" %}" alt="InfHo - Reloaded">
+            <h2>InfHo Hauptseite</h2>
+        </header>
+        <p>Hi, das ist die Hauptseite</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>Neuigkeiten der InfHo</h2>
+
+        <ul>
+            {% for post in posts %}
+           {% include "home/includes/post.html" %}
+           {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What we do</h2>
+        <p>hochbegabtenförderung</p>
+    </section>
+{% endblock %}
