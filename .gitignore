@@ -5,3 +5,17 @@
 __pycache__
 db.sqlite3
 media
+
+pyvenv.cfg
+lib64
+lib64/
+lib/
+include/
+bin/
+infho/blogbilder
+*.sqlite3
+__pycache__
+infho_homepage/__pycache__
+home/__pycache__/
+home/migrations/__pycache__
+

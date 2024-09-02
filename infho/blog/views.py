@@ -11,6 +11,19 @@ from .forms import CommentForm
 # Create your views here.
 
 
+
+def index(request):
+    return render(
+            request, "blog/blog_overview.html",
+                {"request": request, "posts": Post.objects.order_by("-date")}
+        )
+
+def post(request, slug):
+    return render(
+            request, "blog/blog_view.html",
+                {"request": request, "posts": Post.objects.order_by("-date")}
+        )
+
 class StartingPageView(ListView):
     template_name = "home/index.html"
     model = Post
